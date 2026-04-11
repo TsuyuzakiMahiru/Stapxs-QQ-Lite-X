@@ -77,7 +77,7 @@ export function configFactory(outPath: string): UserConfigFnObject {
         return {
             root: './src/renderer',
             envDir: '../../',
-            base: env.VITE_CDN_BASE || './',
+            base: env.VITE_CDN_BASE || '/',
             server: {
                 port: 8080,
                 proxy: {
