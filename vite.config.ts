@@ -2,6 +2,7 @@ import ViteYaml from '@modyfi/vite-plugin-yaml'
 import vue from '@vitejs/plugin-vue'
 import vueDevTools from 'vite-plugin-vue-devtools'
 import updateRecordPlugin from './plugin/update-record.ts'
+import { cloudflare } from '@cloudflare/vite-plugin'
 
 import { resolve } from 'node:path'
 import { visualizer } from 'rollup-plugin-visualizer'
@@ -25,6 +26,7 @@ export function configFactory(outPath: string): UserConfigFnObject {
             vueDevTools(),
             ViteYaml(),
             updateRecordPlugin(),
+            cloudflare(),
             VitePWA({
                 registerType: 'autoUpdate',
                 workbox: {
